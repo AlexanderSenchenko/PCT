@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <sys/time.h>
+#include <string.h>
 #include <omp.h>
 
 const int threshold = 1000;
@@ -45,32 +44,39 @@ void quicksort_tasks(int *v, int low, int high) {
 	}
 }
 
+void init_arr(int *arr, int n)
+{
+	for (int i = 0; i < n; i++) {
+		arr[i] = rand() / (RAND_MAX + 1.0) * (100000 - 1) + 1;
+	}
+}
+
 int main(int argc, char const *argv[])
 {
-	omp_set_nested(1);
+	int nthreads[7] = {1, 2, 4, 6, 8, 10, 12};
 
-	int n = 9;
-	int v[9] = {3, 1, 4, 5, 9, 2, 6, 8, 7};
+	for (int i = 0, n = 1000; i < 4; i++, n *= 10) {
+		int *v = malloc(sizeof(int) * n);
+		int *v_cp = malloc(sizeof(int) * n);
 
-	#if 0
-	for (int i = 0; i < 9; i++) {
-		printf("%d ", v[i]);
+		init_arr(v, n);
+
+		printf("Size array = %d\n", n);
+
+		for (int j = 0; j < 3; j++) {
+			memcpy(v_cp, v, sizeof(int) * n);
+
+			double t = omp_get_wtime();
+			#pragma omp parallel num_threads(nthreads[j])
+			{
+				#pragma omp single
+				quicksort_tasks(v_cp, 0, n - 1);
+			}
+			t = omp_get_wtime() - t;
+
+			printf("Threads: %d T%d = %f\n", nthreads[j], nthreads[j], t);
+		}
 	}
-	printf("\n");
-	#endif
-
-	#pragma omp parallel
-	{
-		#pragma omp single
-		quicksort_tasks(v, 0, n - 1);
-	}
-
-	#if 1
-	for (int i = 0; i < 9; i++) {
-		printf("%d ", v[i]);
-	}
-	printf("\n");
-	#endif
 
 	return 0;
 }
