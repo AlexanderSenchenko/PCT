@@ -35,11 +35,11 @@ void quicksort_tasks(int *v, int low, int high) {
 			quicksort_tasks(v, low, j);
 		if(i < high)
 			quicksort_tasks(v, i, high);
-		} else {
-			#pragma omp task untied
-			{
-				quicksort_tasks(v, low, j);
-			}
+	} else {
+		#pragma omp task untied
+		{
+			quicksort_tasks(v, low, j);
+		}
 		quicksort_tasks(v, i, high);
 	}
 }

@@ -545,7 +545,7 @@ void calculate_forces_v5(struct particle *p, struct particle *f[], float *m, int
 		}
 	}
 			
-	#pragma omp single // Суммарная сила будет хранится в первой строке – f[0][i]
+	#pragma omp single
 	{
 		for (int i = 0; i < n; i++) {
 			for (int tid = 1; tid < nthreads; tid++) {
