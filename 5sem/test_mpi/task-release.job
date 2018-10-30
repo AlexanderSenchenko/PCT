@@ -1,0 +1,8 @@
+#PBS -N mpitask
+#PBS -l nodes=4:ppn=8
+#PBS -q release
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+mpiexec ./test

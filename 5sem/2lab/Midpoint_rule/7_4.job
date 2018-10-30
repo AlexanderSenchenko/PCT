@@ -1,0 +1,7 @@
+#PBS -N 7_4
+#PBS -l nodes=7:ppn=4
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+mpiexec ./midpoint_rule

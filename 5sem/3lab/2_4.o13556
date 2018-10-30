@@ -1,0 +1,3 @@
+Fatal error in PMPI_Allgatherv: Invalid buffer pointer, error stack:
+PMPI_Allgatherv(1122): MPI_Allgatherv(sbuf=0x21219a0, scount=3500, MPI_FLOAT, rbuf=0x2109ad0, rcounts=0x20ee070, displs=0x20ee040, MPI_FLOAT, MPI_COMM_WORLD) failed
+PMPI_Allgatherv(1070): Buffers must not be aliased

@@ -1,0 +1,7 @@
+#PBS -N 2_4
+#PBS -l nodes=2:ppn=4
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+mpiexec ./sgemv

@@ -1,0 +1,5 @@
+SGEMV: matrix-vector product (c[m] = a[m, n] * b[n]; m = 28000, n = 28000)
+Memory used: 5981 MiB
+Elapsed time (32 procs): 0.550081 sec.
+Performance: 2.85 GFLOPS
+Validation failed: elem 0 = 392002944.000000 (real value 392014016.000000)
