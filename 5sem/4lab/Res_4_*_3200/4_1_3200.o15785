@@ -1,0 +1,12 @@
+Epilog:  nodes=4:ppn=1
+Epilog:  neednodes=4:ppn=1
+Epilog:  walltime=00:20:00
+p=4; rows=3200; cols=3200; ttotal=12.891092; tmpi=0.222496; allred=0.095538; thalo 0.126958
+Epilog:  nodes=4:ppn=1
+Epilog:  neednodes=4:ppn=1
+Epilog:  walltime=00:20:00
+Epilog:  cput=00:00:12
+Epilog:  vmem=916940kb
+Epilog:  walltime=00:03:22
+Epilog:  mem=87884kb
+Epilog:  energy_used=0

@@ -1,0 +1,9 @@
+p=4; rows=1600; cols=1600; ttotal=3.286729; tmpi=0.164184; allred=0.080915; thalo 0.083268
+
+p=8; rows=1600; cols=1600; ttotal=1.710898; tmpi=0.215140; allred=0.104151; thalo 0.110990
+
+p=16; rows=1600; cols=1600; ttotal=0.943702; tmpi=0.239780; allred=0.126034; thalo 0.113746
+
+p=32; rows=1600; cols=1600; ttotal=0.553702; tmpi=0.260965; allred=0.153127; thalo 0.107838
+
+stream: rows=1600; cols=1600; ttotal=12.649186

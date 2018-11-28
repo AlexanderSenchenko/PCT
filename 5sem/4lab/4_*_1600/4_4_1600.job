@@ -1,0 +1,7 @@
+#PBS -N 4_4_1600
+#PBS -l nodes=4:ppn=4
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+mpiexec ./main 1600 1600
